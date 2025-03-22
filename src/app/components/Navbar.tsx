@@ -291,11 +291,12 @@ import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
-  };
+const toggleDropdown = (menu: string) => {
+  setOpenDropdown(openDropdown === menu ? null : menu);
+};
+
 
   return (
     <nav className="fixed w-full z-50 bg-white shadow-md h-[90px] flex items-center">
